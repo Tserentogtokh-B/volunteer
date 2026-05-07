@@ -34,7 +34,7 @@ export default function App() {
               <span></span>
               Та сайн дурын ажил хийхээр хайж байна уу? Тэгвэл эндээс эхэл
             </div>
-            <h1>Сайн дурын ажлаар<br/><em>ирээдүйгээ</em> бүтээ</h1>
+            <h1>Нийгэмдээ <br/><em>эерэг өөрчлөлтийг</em> бүтээцгээе</h1>
             <p>Тэтгэлэг авах, CV-ээ сайжруулах, нийгэмд хувь нэмэр оруулах — шаардлагатай бүх боломжийг нэг дороос олоорой.</p>
             <div className="hero-actions">
               <a href="#jobs" className="btn btn-primary">
@@ -70,7 +70,7 @@ export default function App() {
               <div style={{ flex: 1 }}>
                 <div className="profile-mini-info">
                   <h4>Батаа Алтанцэцэг</h4>
-                  <p>МУИС • Компьютерийн ухаан</p>
+                  <p>МУИС • Компьютерын ухаан</p>
                 </div>
                 <div className="progress-wrap">
                   <div className="progress-label">
@@ -87,16 +87,16 @@ export default function App() {
 
       <div className="stats-bar">
         <div className="stats-bar-inner">
-          <div className="stat-item"><div className="big">42h</div><div className="small">Дундаж оролцоо</div></div>
-          <div className="stat-item"><div className="big">96%</div><div className="small">Хэрэглэгчийн сэтгэл ханамж</div></div>
-          <div className="stat-item"><div className="big">3x</div><div className="small">CV гарцын өсөлт</div></div>
-          <div className="stat-item"><div className="big">78%</div><div className="small">Тэтгэлэг авсан хувь</div></div>
+          <div className="stat-item"><div className="big">15k+</div><div className="small">Нийт ажилласан цаг</div></div>
+          <div className="stat-item"><div className="big">380+</div><div className="small">Хэрэгжсэн төсөл</div></div>
+          <div className="stat-item"><div className="big">4.6k</div><div className="small">Олгогдсон сертификат</div></div>
+          <div className="stat-item"><div className="big">1,240</div><div className="small">Идэвхтэй оюутан</div></div>
         </div>
       </div>
 
       <section className="section" id="jobs">
         <div className="section-label">Сайн дурын ажлууд</div>
-        <div className="section-title">Таны төлөх <em>нийгмийн өр</em></div>
+        <div className="section-title">Нийгэмдээ оруулах <em>хувь нэмэр</em></div>
 
         <div className="filter-row">
           <button className={`filter-tab ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>Бүгд</button>
@@ -208,7 +208,7 @@ export default function App() {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                 Технологи
               </span>
-              <h3>Дижитал бичиг үсгийн сургалт — ахмадуудад</h3>
+              <h3>цахим бичиг үсгийн сургалт — ахмадуудад</h3>
               <div className="job-org">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                 IT Mongolia Foundation
@@ -278,13 +278,13 @@ export default function App() {
                 <div className="av">БА</div>
                 <div>
                   <div className="name">Батаа Алтанцэцэг</div>
-                  <div className="sub">МУИС • Компьютерийн ухаан • 3-р курс</div>
+                  <div className="sub">МУИС • Компьютерын ухаан • 3-р курс</div>
                 </div>
               </div>
 
               <div className="prog-section">
                 <div className="prog-row">
-                  <span>Нийт сайн дурын цаг</span>
+                  <span>Нийт сайн дурын ажил хийсэн цаг</span>
                   <span>42 / 100 цаг</span>
                 </div>
                 <div className="prog-track"><div className="prog-fill" style={{ width: '42%' }}></div></div>
@@ -371,21 +371,21 @@ export default function App() {
               <div className="feature-dot"></div>
               <div>
                 <h4>Автомат сертификат</h4>
-                <p>Оролцогч бүрт дижитал сертификат автоматаар илгээгдэнэ.</p>
+                <p>Оролцогч бүрт цахим сертификат автоматаар илгээгдэнэ.</p>
               </div>
             </div>
             <div className="feature">
               <div className="feature-dot"></div>
               <div>
                 <h4>Тайлан, статистик</h4>
-                <p>Хэдэн оюутан, хэдэн цаг оролцсоныг бодит цаг дээр харна.</p>
+                <p>Хэдэн оюутан, хэдэн цаг оролцсоныг цагийг харна.</p>
               </div>
             </div>
             <div className="feature">
               <div className="feature-dot"></div>
               <div>
                 <h4>Сонирхлоор шүүх</h4>
-                <p>Мэргэжил, сонирхлоороо таарч буй оюутнуудыг олно.</p>
+                <p>Мэргэжил, сонирхлоороо таарч буй оюутан залуусыг олно.</p>
               </div>
             </div>
           </div>
