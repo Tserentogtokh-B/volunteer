@@ -69,6 +69,11 @@
     border-radius: 8px; transition: background 0.2s, color 0.2s;
   }
 
+  .nav-link.active {
+    background: var(--sage-pale);
+    color: var(--sage);
+  }
+
   .nav-links a:hover { background: var(--sage-pale); color: var(--sage); }
 
   .nav-cta {
@@ -267,6 +272,31 @@
     margin-top: auto; padding-top: 18px;
     border-top: 1px solid var(--cream-dark);
     display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .job-details {
+    overflow: hidden;
+    height: 0px; /* animated via JS */
+    margin-top: 10px;
+    border-radius: 8px;
+    background: rgba(250,248,244,0.7);
+  }
+
+  .job-details-inner {
+    padding: 12px 14px;
+    color: var(--ink);
+  }
+
+  .inline-details {
+    margin-top: 10px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: rgba(250,248,244,0.7);
+    color: var(--ink);
+  }
+
+  .inline-details p {
+    margin: 0;
   }
 
   .cert-pill {
