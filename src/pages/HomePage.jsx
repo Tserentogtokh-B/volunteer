@@ -1,84 +1,65 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { jobs } from '../data/jobs.js'
+import { organizations } from '../data/orgs.js'
+import { formatShortDate } from '../utils/date.js'
 
-const infoCards = [
+const steps = [
   {
-    id: 'intro',
-    tagClass: 'tag-edu',
-    tag: 'Танилцуулга',
-    title: 'Ерөнхий танилцуулга',
-    summary: 'Энд эхний утга, товч танилцуулга, гол товчлуурууд байна.',
-    details: 'VolunteerMN платформ нь оюутан залуусыг сайн дурын ажлын боломжтой холбоход зориулагдсан. Та өөрийн сонирхол, байршлаар ажлаа сонгож, хийсэн цагаа бүртгэж, CV-дээ ашиглах сертификат авах боломжтой.',
-    to: '/jobs',
+    title: 'Хайлт хийж тохирох ажлаа сонго',
+    detail: 'Сонирхол, байршил, цагийн боломжоо шүүж тохирох боломжоо олно.',
   },
   {
-    id: 'jobs',
-    tagClass: 'tag-env',
-    tag: 'Ажлууд',
-    title: 'Шүүлттэй жагсаалт',
-    summary: 'State ашиглаж, category-гаар шүүхийг эндээс харж болно.',
-    details: 'Ажлын хэсэг дээр та боловсрол, байгаль орчин, эрүүл мэнд, технологи зэрэг ангиллаар шүүж болно. Энэ нь хэрэгтэй ажлаа хурдан олоход тусалдаг.',
-    to: '/jobs',
+    title: 'Хялбар бүртгэл илгээ',
+    detail: 'Нэг товшилтоор бүртгүүлж, байгууллагын хариуг хүлээнэ.',
   },
   {
-    id: 'profile',
-    tagClass: 'tag-social',
-    tag: 'Тайлан',
-    title: 'Profile / CV тайлан',
-    summary: 'Хувийн мэдээлэл, ахиц, хийсэн ажлын түүхийг харуулна.',
-    details: 'Тайлан хэсэгт таны нийт цаг, авсан сертификат, оролцсон байгууллагын мэдээлэл харагдана. Энэ нь тэтгэлэг болон ажлын анкет дээр бодит туршлагаа харуулахад хэрэгтэй.',
-    to: '/profile',
+    title: 'Цаг, сертификатаа баталгаажуул',
+    detail: 'Ажил дууссаны дараа тайлан баталгаажиж, сертификат үүснэ.',
   },
 ]
 
 export default function HomePage() {
-  const [expandedId, setExpandedId] = useState(null)
-
-  function toggleExpand(id) {
-    setExpandedId((prev) => (prev === id ? null : id))
-  }
+  const featuredJobs = jobs.slice(0, 3)
+  const featuredOrgs = organizations.slice(0, 3)
 
   return (
     <>
-      <section>
+      <section className="hero-section">
         <div className="hero">
           <div className="hero-text">
             <div className="hero-badge">
               <span></span>
-              Та сайн дурын ажил хийхээр хайж байна уу? Тэгвэл эндээс эхэл
+              Нийгмийн өөрчлөлтөд оролцох хамгийн хурдан зам
             </div>
-            <h1>Нийгэмдээ <br /><em>эерэг өөрчлөлтийг</em> бүтээцгээе</h1>
-            <p>Тэтгэлэг авах, CV-ээ сайжруулах, нийгэмд хувь нэмэр оруулах боломжуудыг нэг дороос олоорой.</p>
+            <h1>Сайн дурын <br /><em>боломжуудыг</em> нэг дороос</h1>
+            <p>Сонирхолдоо тохирсон ажлаа олж, цагийн баталгаатай тайлангаар CV-ээ баяжуулаарай.</p>
             <div className="hero-actions">
               <Link to="/jobs" className="btn btn-primary">Ажил хайх</Link>
               <Link to="/orgs" className="btn btn-ghost">Байгууллага бол →</Link>
+            </div>
+            <div className="hero-search">
+              <input type="text" placeholder="Ажил, ур чадвар, байгууллага" />
+              <input type="text" placeholder="Байршил" />
+              <Link to="/jobs" className="btn btn-primary">Хайлт</Link>
             </div>
           </div>
 
           <div className="hero-visual">
             <div className="stat-cards">
-              <div className="stat-card"><div className="num">1,240</div><div className="label">Бүртгэлтэй оюутан</div></div>
+              <div className="stat-card"><div className="num">1,240</div><div className="label">Идэвхтэй оюутан</div></div>
               <div className="stat-card"><div className="num">380</div><div className="label">Нээлттэй ажил</div></div>
               <div className="stat-card"><div className="num">95</div><div className="label">Байгууллага</div></div>
               <div className="stat-card"><div className="num">4.6k</div><div className="label">Олгосон сертификат</div></div>
             </div>
-
-            {/* <div className="profile-mini">
-              <div className="avatar-ring">БА</div>
-              <div style={{ flex: 1 }}>
-                <div className="profile-mini-info">
-                  <h4>Батаа Алтанцэцэг</h4>
-                  <p>МУИС • Компьютерын ухаан</p>
-                </div>
-                <div className="progress-wrap">
-                  <div className="progress-label">
-                    <span style={{ fontSize: '11px', color: 'var(--ink-light)' }}>Нийт цаг: 42/100</span>
-                    <span style={{ fontSize: '11px', color: 'var(--sage)', fontWeight: 600 }}>42%</span>
-                  </div>
-                  <div className="progress-track"><div className="progress-fill"></div></div>
-                </div>
+            <div className="hero-highlight">
+              <div className="hero-highlight-title">Өнөөдрийн онцлох боломж</div>
+              <div className="hero-highlight-card">
+                <div className="pill">Онлайн</div>
+                <h3>Цахим бичиг үсгийн сургалт</h3>
+                <p>Ахмадуудад технологийн хэрэглээг энгийнээр тайлбарлах сайн дурын ажил.</p>
+                <Link to="/jobs" className="text-link">Дэлгэрэнгүй →</Link>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
@@ -93,31 +74,50 @@ export default function HomePage() {
       </div>
 
       <section className="section">
-        <div className="section-label">Системийн талаар ойлголтоо нэмэгдүүлээрэй</div>
-        <div className="section-title">Та хэрвээ шинээр элсэж байгаа бол доорх 3-н мэдээллийг <em>заавал уншаарай</em></div>
+        <div className="section-label">Яаж ажилладаг вэ?</div>
+        <div className="section-title">3 алхамтайгаар <em>сайн дурын ажилд</em> оролц</div>
+        <div className="card-grid">
+          {steps.map((step) => (
+            <div key={step.title} className="card">
+              <h3 className="card-title">{step.title}</h3>
+              <p>{step.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      <section className="section">
+        <div className="section-label">Онцлох ажлууд</div>
+        <div className="section-title">Шинээр нэмэгдсэн <em>боломжууд</em></div>
         <div className="jobs-grid">
-          {infoCards.map((card) => (
-            <div className="job-card" key={card.id}>
-              <span className={`tag ${card.tagClass}`}>{card.tag}</span>
-              <h3>{card.title}</h3>
-              <p>{card.summary}</p>
-
-              <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
-                <button
-                  className="btn"
-                  onClick={() => toggleExpand(card.id)}
-                  aria-expanded={expandedId === card.id}
-                >
-                  {expandedId === card.id ? 'Хаах' : 'Дэлгэрэнгүй'}
-                </button>
+          {featuredJobs.map((job) => (
+            <div className="job-card" key={job.id}>
+              <span className={`tag ${job.tagClass}`}>{job.tag}</span>
+              <h3>
+                <Link className="job-link" to={`/jobs/${job.id}`}>{job.title}</Link>
+              </h3>
+              <div className="job-org">{job.org}</div>
+              <div className="job-meta">
+                <span className="meta-item">⏱ {job.time}</span>
+                <span className="meta-item">📍 {job.location}</span>
+                <span className="meta-item">🗓 {formatShortDate(job.startDate)}</span>
               </div>
+              <Link className="btn btn-ghost" to={`/jobs/${job.id}`}>Дэлгэрэнгүй</Link>
+            </div>
+          ))}
+        </div>
+      </section>
 
-              {expandedId === card.id && (
-                <div className="inline-details">
-                  <p>{card.details}</p>
-                </div>
-              )}
+      <section className="section">
+        <div className="section-label">Байгууллагууд</div>
+        <div className="section-title">Идэвхтэй <em>хамтрагч байгууллага</em></div>
+        <div className="org-grid">
+          {featuredOrgs.map((org) => (
+            <div key={org.id} className="card">
+              <div className="pill">{org.focus}</div>
+              <h3 className="card-title">{org.name}</h3>
+              <p>{org.description}</p>
+              <div className="list-meta">{org.location} · Нээлттэй: {org.openRoles}</div>
             </div>
           ))}
         </div>

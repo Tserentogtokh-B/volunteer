@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
-import '../css/SignUp.css'
+import '../css/SignIn.css'
 
-export default function SignUp() {
-    const [name, setName] = useState('')
+export default function SignIn() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [role, setRole] = useState('volunteer')
@@ -16,8 +15,8 @@ export default function SignUp() {
         event.preventDefault()
         setError('')
 
-        if (!name.trim() || !email.trim()) {
-            setError('Нэр, имэйл хаягаа оруулна уу.')
+        if (!email.trim()) {
+            setError('Имэйл хаягаа оруулна уу.')
             return
         }
 
@@ -27,18 +26,11 @@ export default function SignUp() {
     }
 
     return (
-        <div className="signup">
-            <h2>Бүртгүүлэх</h2>
-            <p>Хүссэн ролио сонгоод бүртгүүлээрэй</p>
+        <div className="signin">
+            <h2>Нэвтрэх</h2>
+            <p>Үргэлжлүүлэхийн тулд нэвтэрнэ үү</p>
             {error && <div className="status error">{error}</div>}
-            <form className="signup-form" onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Нэр"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                />
+            <form className="signin-form" onSubmit={handleSubmit}>
                 <input
                     type="email"
                     name="email"
@@ -55,14 +47,17 @@ export default function SignUp() {
                 <input
                     type="password"
                     name="password"
-                    placeholder="Нууц үг"
-                    autoComplete="new-password"
+                    placeholder="Password"
+                    autoComplete="current-password"
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                 />
                 <div className="foot">
-                    <button className="btn btn-primary" type="submit">Бүртгүүлэх</button>
-                    <Link className="text-link" to="/signin">Нэвтрэх</Link>
+                    <button className="btn btn-primary" type="submit">Нэвтрэх</button>
+                    <label className="rememberMe">
+                        <input className="check" type="checkbox" /> Намайг санах
+                    </label>
+                    <Link to="/forgot-password">Нууц үг мартсан?</Link>
                 </div>
             </form>
         </div>

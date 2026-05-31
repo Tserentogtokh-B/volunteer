@@ -1,5 +1,5 @@
-/* src/pages/SignUp.css */
-.signup {
+/* src/pages/signin.css */
+.signin {
   max-width: 420px;
   margin: 24px auto;
   padding: 20px;
@@ -8,29 +8,29 @@
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
-.signup h2 { margin: 0 0 8px; }
-.signup p { margin: 0 0 14px; color: #666; }
+.signin h2 { margin: 0 0 8px; }
+.signin p { margin: 0 0 14px; color: #666; }
 
-.signup .status {
+.signin .status {
   border-radius: 8px;
   padding: 10px 12px;
   margin-bottom: 12px;
   font-size: 13px;
 }
 
-.signup .status.error {
+.signin .status.error {
   background: #fff1f1;
   color: #9b1c1c;
   border: 1px solid #f1b5b5;
 }
 
-.signup-form {
+.signin-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.signup input {
+.signin input {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #e6e6e6;
@@ -38,7 +38,7 @@
   margin-bottom: 0;
 }
 
-.signup select {
+.signin select {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #e6e6e6;
@@ -46,24 +46,24 @@
   background: #fff;
 }
 
-.signup input.check {
+.signin input.check {
   width: auto;
   padding: 0;
   margin-bottom: 0;
   flex: 0 0 auto;
 }
 
-.signup .btn {
+.signin .btn {
   padding: 10px 14px;
   border-radius: 8px;
 }
 
 @media (max-width: 480px) {
-  .signup { margin: 12px; padding: 16px; }
+  .signin { margin: 12px; padding: 16px; }
 }
 
 
-.signup .foot{
+.signin .foot{
   display: flex;
   gap: 10px;
   align-items: center;
@@ -79,11 +79,14 @@
   white-space: nowrap;
 }
 
-.signup .text-link {
+.signin .foot a{
   text-decoration: none;
   color: #1a1a18;
   font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.6;
   font-weight: 500;
 }
 
-.signup .text-link:hover { color: var(--sage); }
+.signin .foot a:hover { color: var(--sage); }
+

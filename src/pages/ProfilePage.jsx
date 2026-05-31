@@ -1,4 +1,25 @@
+import { Link } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext.jsx'
+
 export default function ProfilePage() {
+  const { isAuthenticated } = useAuth()
+
+  if (!isAuthenticated) {
+    return (
+      <section className="section">
+        <div className="job-card">
+          <span className="tag tag-social">Нэвтрэх шаардлагатай</span>
+          <h3>Тайлан зөвхөн нэвтэрсний дараа харагдана</h3>
+          <p>Нэвтэрсний дараа таны сайн дурын түүх болон тайлан гарч ирнэ.</p>
+          <div className="job-footer">
+            <span className="cert-pill">Нэвтрээд мэдээллээ хараарай</span>
+            <Link className="apply-btn" to="/signin">Нэвтрэх</Link>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <div className="profile-section" id="profile">
       <div className="profile-section-inner">
